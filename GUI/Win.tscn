@@ -1,10 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://dokf6opr1lp1n"]
+[gd_scene load_steps=9 format=3 uid="uid://dokf6opr1lp1n"]
 
 [ext_resource type="Script" path="res://Scripts/Win.gd" id="1_n6jxq"]
 [ext_resource type="FontFile" uid="uid://dli73fsuor5gv" path="res://Assets/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_0mnxh"]
+[ext_resource type="FontFile" uid="uid://deaxdvjssbg1" path="res://Assets/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_uykec"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l77u"]
 bg_color = Color(0.552941, 0.690196, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cocnp"]
+bg_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jfj7"]
+bg_color = Color(0.845489, 0.704492, 0.597886, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve7tj"]
+bg_color = Color(0.951714, 0.909486, 0.787171, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7civ"]
+bg_color = Color(0.951714, 0.909486, 0.787171, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_n6jxq")
@@ -28,6 +92,8 @@ alignment = 1
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.951714, 0.909486, 0.787171, 1)
+theme_override_colors/font_shadow_color = Color(0.301138, 0.339647, 0.615651, 1)
 theme_override_fonts/font = ExtResource("2_0mnxh")
 theme_override_font_sizes/font_size = 80
 text = "congratulations!"
@@ -44,10 +110,31 @@ theme_override_constants/separation = 30
 
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "  RESTART  "
+theme_override_colors/font_hover_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_hover_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_fonts/font = ExtResource("3_uykec")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_cocnp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1jfj7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ve7tj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7civ")
+text = "Restart"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "QUIT"
+theme_override_colors/font_hover_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_hover_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_fonts/font = ExtResource("3_uykec")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_cocnp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1jfj7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ve7tj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7civ")
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
