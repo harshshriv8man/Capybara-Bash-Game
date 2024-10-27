@@ -1,0 +1,532 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0i3h55u78f7e"]
+
+[ext_resource type="Script" path="res://Scenes/terrain.gd" id="1_0xkpi"]
+[ext_resource type="Texture2D" uid="uid://l002gpkjtnjs" path="res://Assets/Jump_terrain.PNG" id="1_3qfdw"]
+[ext_resource type="Texture2D" uid="uid://cb5h7ftvlr54m" path="res://Assets/Terrain.PNG" id="2_51xbi"]
+[ext_resource type="Texture2D" uid="uid://dblj0h2hf88md" path="res://Assets/Flat_terrain.PNG" id="3_p8x34"]
+[ext_resource type="Texture2D" uid="uid://cp42o0nj31djv" path="res://Assets/Unit_terrain.PNG" id="4_mmppq"]
+[ext_resource type="Texture2D" uid="uid://dwfcc2k7e0txa" path="res://Assets/Stone.PNG" id="5_gdic8"]
+[ext_resource type="Texture2D" uid="uid://dnbxx8c8b7g5c" path="res://Assets/Soil.PNG" id="6_dpw3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q84l7"]
+size = Vector2(148, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deg3u"]
+size = Vector2(148, 49)
+
+[sub_resource type="Animation" id="Animation_qao22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Terrain Collision4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2800, 376)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Terrain Collision8:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4741, 350)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Terrain Collision9:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4563, 414)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Terrain Collision8:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6jw1q"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Terrain Collision4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2800, 376), Vector2(2905, 376)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Terrain Collision8:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4872, 345), Vector2(4741, 350)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Terrain Collision9:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4563, 414), Vector2(4669, 413)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Terrain Collision8:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.701622, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5owaf"]
+_data = {
+"RESET": SubResource("Animation_qao22"),
+"move": SubResource("Animation_6jw1q")
+}
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_0xkpi")
+
+[node name="Terrain" type="Sprite2D" parent="."]
+position = Vector2(574, 547.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision" type="CollisionShape2D" parent="."]
+position = Vector2(557, 528)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain2" type="Sprite2D" parent="."]
+position = Vector2(2468, 579.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision2" type="CollisionShape2D" parent="."]
+position = Vector2(2455, 560)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain5" type="Sprite2D" parent="."]
+position = Vector2(4195, 522.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision5" type="CollisionShape2D" parent="."]
+position = Vector2(4182, 503)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain6" type="Sprite2D" parent="."]
+position = Vector2(4388, 522.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision6" type="CollisionShape2D" parent="."]
+position = Vector2(4375, 503)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain10" type="Sprite2D" parent="."]
+position = Vector2(5118, 450.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision10" type="CollisionShape2D" parent="."]
+position = Vector2(5107, 430)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain11" type="Sprite2D" parent="."]
+position = Vector2(5038, 505.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision11" type="CollisionShape2D" parent="."]
+position = Vector2(5027, 485)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain12" type="Sprite2D" parent="."]
+position = Vector2(5322, 359.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision12" type="CollisionShape2D" parent="."]
+position = Vector2(5311, 339)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain3" type="Sprite2D" parent="."]
+position = Vector2(2648, 486.5)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="Terrain Collision3" type="CollisionShape2D" parent="."]
+position = Vector2(2634, 466)
+shape = SubResource("RectangleShape2D_q84l7")
+
+[node name="Terrain Collision4" type="AnimatableBody2D" parent="."]
+position = Vector2(2800, 376)
+metadata/_edit_group_ = true
+
+[node name="Terrain4" type="Sprite2D" parent="Terrain Collision4"]
+position = Vector2(13, 22)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain Collision4"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_deg3u")
+
+[node name="Terrain 2" type="Sprite2D" parent="."]
+position = Vector2(161, 522)
+scale = Vector2(7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="Terrain 2 Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 651, 1, 563, 95, 565, 94, 496, 236, 497, 235, 517, 325, 516, 327, 653)
+
+[node name="Terrain 10" type="Sprite2D" parent="."]
+position = Vector2(3863.1, 461.5)
+scale = Vector2(7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="Terrain 2 Collision3" type="CollisionPolygon2D" parent="."]
+position = Vector2(3702.1, -60.5)
+polygon = PackedVector2Array(0, 651, 1, 563, 95, 565, 94, 496, 236, 497, 235, 517, 325, 516, 327, 653)
+
+[node name="Terrain 4" type="Sprite2D" parent="."]
+position = Vector2(1146.1, 516.5)
+scale = Vector2(7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="Terrain 2 Collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(985.1, -5.5)
+polygon = PackedVector2Array(0, 651, 1, 563, 95, 565, 94, 496, 236, 497, 235, 517, 325, 516, 327, 653)
+
+[node name="Terrain 16" type="Sprite2D" parent="."]
+position = Vector2(7572.1, 524.5)
+scale = Vector2(7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="Terrain 2 Collision4" type="CollisionPolygon2D" parent="."]
+position = Vector2(7411.1, 2.5)
+polygon = PackedVector2Array(0, 651, 1, 563, 95, 565, 94, 496, 236, 497, 235, 517, 325, 516, 327, 653)
+
+[node name="Terrain 9" type="Sprite2D" parent="."]
+position = Vector2(3089.1, 476.5)
+scale = Vector2(-7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3089.1, 476.5)
+rotation = 3.14159
+scale = Vector2(7.02, -7.02)
+polygon = PackedVector2Array(-9.95728, -4.05983, -10.0997, 5.05698, -21.6, 5, -22.7778, 7.47863, -22.208, 20.0142, 22.6, 20, 23.6, 18, 23.9459, 17.735, 23.9459, 0.356125, 23, -0.6, 21.5242, -1.06838, 19, -0.6, 17.3932, -1.06838, 15.6, 0, 13.8319, -1.06838, 11.2678, 0.356125, 10.9829, -3.77493)
+
+[node name="Terrain 14" type="Sprite2D" parent="."]
+position = Vector2(6922.5, 468.5)
+scale = Vector2(-7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(6922.5, 468.5)
+rotation = 3.14159
+scale = Vector2(7.02, -7.02)
+polygon = PackedVector2Array(-9.95728, -4.05983, -10.0997, 5.05698, -21.6, 5, -22.7778, 7.47863, -22.208, 20.0142, 22.6, 20, 23.6, 18, 23.9459, 17.735, 23.9459, 0.356125, 23, -0.6, 21.5242, -1.06838, 19, -0.6, 17.3932, -1.06838, 15.6, 0, 13.8319, -1.06838, 11.2678, 0.356125, 10.9829, -3.77493)
+
+[node name="Terrain 15" type="Sprite2D" parent="."]
+position = Vector2(7258.5, 524.5)
+scale = Vector2(-7.02, 7.02)
+texture = ExtResource("2_51xbi")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(7258.5, 524.5)
+rotation = 3.14159
+scale = Vector2(7.02, -7.02)
+polygon = PackedVector2Array(-9.95728, -4.05983, -10.0997, 5.05698, -21.6, 5, -22.7778, 7.47863, -22.208, 20.0142, 22.6, 20, 23.6, 18, 23.9459, 17.735, 23.9459, 0.356125, 23, -0.6, 21.5242, -1.06838, 19, -0.6, 17.3932, -1.06838, 15.6, 0, 13.8319, -1.06838, 11.2678, 0.356125, 10.9829, -3.77493)
+
+[node name="Terrain 3" type="Sprite2D" parent="."]
+position = Vector2(773.1, 602)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(779.1, 602)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 7" type="Sprite2D" parent="."]
+position = Vector2(1855.1, 487)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(1861.1, 487)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 8" type="Sprite2D" parent="."]
+position = Vector2(2154.1, 490)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision3" type="CollisionPolygon2D" parent="."]
+position = Vector2(2160.1, 490)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 17" type="Sprite2D" parent="."]
+position = Vector2(9237.1, 566)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision7" type="CollisionPolygon2D" parent="."]
+position = Vector2(9243.1, 565)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 11" type="Sprite2D" parent="."]
+position = Vector2(5935.1, 413)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision4" type="CollisionPolygon2D" parent="."]
+position = Vector2(5941.1, 413)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 12" type="Sprite2D" parent="."]
+position = Vector2(6238.1, 471)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision5" type="CollisionPolygon2D" parent="."]
+position = Vector2(6244.1, 471)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 13" type="Sprite2D" parent="."]
+position = Vector2(6535.1, 531)
+scale = Vector2(8.12, 6.92)
+texture = ExtResource("3_p8x34")
+
+[node name="Terrain 3 Collision6" type="CollisionPolygon2D" parent="."]
+position = Vector2(6541.1, 531)
+scale = Vector2(8.12, 6.92)
+polygon = PackedVector2Array(-16.7488, -7.08092, -16.6256, 0.867058, 16.133, 0.722549, 16.0099, -6.7919, -16.6256, -7.08092)
+
+[node name="Terrain 5" type="Sprite2D" parent="."]
+position = Vector2(1380.5, 603.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("4_mmppq")
+
+[node name="Terrain 5 Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(1380.5, 603.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-8, -13, -8, -11.6, -10, -10.6, -10, 5.6, -8, 6.6, -8, 8, 8.6, 8, 9.6, 6, 11, 6, 11, -10.6, 9, -11.6, 9, -13)
+
+[node name="Terrain 6" type="Sprite2D" parent="."]
+position = Vector2(1508, 604.5)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("4_mmppq")
+
+[node name="Terrain 6 Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(1508, 604.5)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-8, -13, -8, -11.6, -10, -10.6, -10, 5.6, -8, 6.6, -8, 8, 8.6, 8, 9.6, 6, 11, 6, 11, -10.6, 9, -11.6, 9, -13)
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(3368, 571)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(3368, 571)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(3502.5, 570.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(3502.5, 570.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Rock3" type="Sprite2D" parent="."]
+position = Vector2(5163.5, 517.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision3" type="CollisionPolygon2D" parent="."]
+position = Vector2(5163.5, 517.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(5462.5, 517.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision4" type="CollisionPolygon2D" parent="."]
+position = Vector2(5462.5, 517.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(5579.5, 517.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision5" type="CollisionPolygon2D" parent="."]
+position = Vector2(5579.5, 517.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Rock6" type="Sprite2D" parent="."]
+position = Vector2(5696.5, 517.75)
+scale = Vector2(6.7, 5.59)
+texture = ExtResource("5_gdic8")
+
+[node name="Rock Collision6" type="CollisionPolygon2D" parent="."]
+position = Vector2(5696.5, 517.75)
+scale = Vector2(6.7, 5.59)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil" type="Sprite2D" parent="."]
+position = Vector2(7855, 579)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(7855, 579)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil2" type="Sprite2D" parent="."]
+position = Vector2(8051.75, 582.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(8051.75, 582.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil3" type="Sprite2D" parent="."]
+position = Vector2(8186.75, 580.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision3" type="CollisionPolygon2D" parent="."]
+position = Vector2(8186.75, 580.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil4" type="Sprite2D" parent="."]
+position = Vector2(8469.75, 574.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision4" type="CollisionPolygon2D" parent="."]
+position = Vector2(8469.75, 574.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil5" type="Sprite2D" parent="."]
+position = Vector2(8612.75, 569.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision5" type="CollisionPolygon2D" parent="."]
+position = Vector2(8612.75, 569.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil6" type="Sprite2D" parent="."]
+position = Vector2(8827.75, 572.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision6" type="CollisionPolygon2D" parent="."]
+position = Vector2(8827.75, 572.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="Soil7" type="Sprite2D" parent="."]
+position = Vector2(8913.75, 572.25)
+scale = Vector2(5.10999, 4.57)
+texture = ExtResource("6_dpw3t")
+
+[node name="Soil Collision7" type="CollisionPolygon2D" parent="."]
+position = Vector2(8913.75, 572.25)
+scale = Vector2(5.10999, 4.57)
+polygon = PackedVector2Array(-7, -12, -7, -10.6, -9, -9.6, -9, 4.6, -7, 5.6, -7, 7, 7.6, 7, 8.6, 5, 10, 5, 10, -9.6, 8, -10.6, 8, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5owaf")
+}
+
+[node name="Terrain Collision8" type="AnimatableBody2D" parent="."]
+position = Vector2(4741, 350)
+metadata/_edit_group_ = true
+
+[node name="Terrain4" type="Sprite2D" parent="Terrain Collision8"]
+position = Vector2(13, 22)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain Collision8"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_deg3u")
+
+[node name="Terrain Collision9" type="AnimatableBody2D" parent="."]
+position = Vector2(4563, 414)
+metadata/_edit_group_ = true
+
+[node name="Terrain4" type="Sprite2D" parent="Terrain Collision9"]
+position = Vector2(13, 22)
+scale = Vector2(8.84, 6.66)
+texture = ExtResource("1_3qfdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain Collision9"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_deg3u")

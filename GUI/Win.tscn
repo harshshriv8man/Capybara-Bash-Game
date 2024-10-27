@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dokf6opr1lp1n"]
+
+[ext_resource type="Script" path="res://Scripts/Win.gd" id="1_n6jxq"]
+[ext_resource type="FontFile" uid="uid://dli73fsuor5gv" path="res://Assets/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_0mnxh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l77u"]
+bg_color = Color(0.552941, 0.690196, 0.427451, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_n6jxq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3l77u")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.07
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0mnxh")
+theme_override_font_sizes/font_size = 80
+text = "congratulations!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  RESTART  "
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
