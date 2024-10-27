@@ -1,9 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6b186w2jm0mk"]
+[gd_scene load_steps=10 format=3 uid="uid://c6b186w2jm0mk"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_bv6cu"]
 [ext_resource type="Texture2D" uid="uid://bsgge7sk3bbcw" path="res://Assets/IMG_0365.PNG" id="2_xqak3"]
 [ext_resource type="Texture2D" uid="uid://bmc2dh2knw6aw" path="res://Assets/bg.PNG" id="3_hwua2"]
 [ext_resource type="FontFile" uid="uid://dli73fsuor5gv" path="res://Assets/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_dtvmv"]
+[ext_resource type="FontFile" uid="uid://deaxdvjssbg1" path="res://Assets/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_qc1mu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yc7r"]
+bg_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i337d"]
+bg_color = Color(0.845489, 0.704492, 0.597886, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8trtq"]
+bg_color = Color(0.951714, 0.909486, 0.787171, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnihy"]
+bg_color = Color(0.951714, 0.909486, 0.787171, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.845489, 0.704492, 0.597886, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.447069, 0.248675, 0.71721, 0.6)
+shadow_size = 3
+anti_aliasing = false
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -54,12 +118,30 @@ theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_hover_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_hover_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_fonts/font = ExtResource("5_qc1mu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_6yc7r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i337d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8trtq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mnihy")
 text = "Play"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_hover_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_hover_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_pressed_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_colors/font_color = Color(0.301138, 0.339647, 0.615651, 1)
+theme_override_fonts/font = ExtResource("5_qc1mu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_6yc7r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i337d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8trtq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mnihy")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
