@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>Capybara Pixel Platformer Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="https://newhacks.ca/" class="logo">NewHacks</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#demo">Demo</a></li>
+        </ul>
+    </header>
+    
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="clouds.png" id="clouds">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">The Capybara Bash</h2>
+        <a href="#home" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+
+    <br><br>
+    <div class="sec">
+    <div class="section-box" id="home">
+        <h2>NewHacks 2024 Video Game Theme Entry | The Capybara Bash</h2>
+        <h2>Meet The Team!</h2>
+        <p>
+            Our group consists of 3 members! Jane Felicia Jonatan, Kimberly Prijadi, and Harsh Shrivastav.
+            Kimberly and Harsh created the game mechanics on Godot, while Jane designed the 
+            website and pixel art.
+        </p>
+    </div>
+    <br><br>
+    <div class="section-box">
+        <h2>About Our Game | The Capybara Bash</h2>
+        <div class="image-text-wrapper">
+        <p>
+            The Capybara Bash is a pixel art platformer game where our capybara, Capy, explores
+            the world in search of their favorite food, Gobi berries. Help Capy traverse numerous platformer 
+            levels and different terrains, all while trying to survive and avoid the vicious
+            spike traps. Join Capy on their quest to find the delicious Gobi berries today!
+        </p>
+            <img src="capy2.png" class="right">
+        </div>
+    </div>
+    <br><br>
+    <div class="section-box" id="screenshots">
+        <h2>In-Game Screenshots</h2>
+        <p>Here are some screenshots from our game!</p>
+    </div>
+        <div class="section-box" id="screenshots"><img src="screenshot1.png" class="center"><br></div>
+        <div class="section-box" id="screenshots"><img src="screenshot2.png" class="center"><br></div>
+        <div class="section-box" id="screenshots"><img src="screenshot3.png" class="center"><br></div>
+    <br><br>
+    <div class="section-box" id="demo">
+        <h2>Game Demo</h2>
+        <p>
+            Now, we will move on to the game demo on Godot.
+        </p>
+    </div>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let clouds = document.getElementById('clouds');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountains_front = document.getElementById('mountains_front');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            clouds.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        });
+    </script>
+</body>
+</html>
